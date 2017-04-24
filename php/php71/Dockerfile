@@ -61,5 +61,9 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
     composer global require "hirak/prestissimo:^0.3" && \
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
+    
+RUN mkdir -p /data/www
+VOLUME ["/data/www"]
+WORKDIR /data/www
 
 CMD php
